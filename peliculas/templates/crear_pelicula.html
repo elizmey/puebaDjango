@@ -1,0 +1,11 @@
+<h1>Registrar Pelicula</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+{{ error }}
+<form action="{% url 'crear_pelicula' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}

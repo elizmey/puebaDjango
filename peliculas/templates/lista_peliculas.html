@@ -1,0 +1,15 @@
+<h1>Peliculas Registradas</h1>
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url 'crear_pelicula' %}">Registrar nueva película</a>
+<ul>
+    {% for pelicula in peliculas %}
+    <li>
+        <strong>{{ pelicula.titulo }}</strong> - {{ pelicula.director }} ({{ pelicula.año }})
+    </li>
+    {% empty %}
+    <li>No hay películas registradas.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
